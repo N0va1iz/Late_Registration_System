@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .clearfix{
+                clear: both;
+            }
+            .container{
+                width: 1500px;
+                margin: 0 auto;
+                background: white;
+                overflow: hidden;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			                0 10px 10px rgba(0,0,0,0.22);
+            }
+            header{
+                text-align: center;
+                width: 1500px;
+                background: white;
+                margin: 0 auto;
+                font-size: small;
+            }
+            section{
+                margin-top: 20px;
+                margin-right: 40px;
+                /* text-align: center; */
+                width: 1075px;
+                height: 700px;
+                background: rgb(255, 239, 216);
+                float: right;
+                
+            }
+            aside{
+                margin-top: 20px;
+                margin-left: 40px;
+                width: 305px;
+                height: 700px;
+                text-align: center;
+                background: rgb(255, 211, 211);
+            }
+            footer{
+                background-image: url("https://cdn.discordapp.com/attachments/775604868869783582/780341743555575858/unknown.png");
+                width: 1500px;
+                height: 80px;
+                margin-top: 20px;
+            }
+            body{
+                background-color: blanchedalmond;
+            }
+            .button{
+                background-color: #4a4144; 
+                color:white; 
+            }
+            .button4{
+                background-color: #4a4144; 
+                color:white;
+            }
+            .buttonSelect{
+                background-color: rgb(248, 160, 160);
+                color:white;
+            }
+            .button:hover {
+                background-color: rgb(248, 160, 160);
+                color: white;
+            }
+            .button4:hover {
+                background-color: rgb(157, 247, 162);
+                color: white;
+            }
+            .button-wrapper{
+                width:305px;
+                height:100px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button-wrapper2{
+                width: 250px;
+                height: 50px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button1{padding: 15px 45px }
+            .buttonAT:active {
+                background-color:rgb(248, 160, 160);
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .button:hover span {
+                padding-right: 20px;
+            }
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            .disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+            section h1{
+                font-size: 30px;
+                font-weight: bolder;
+                text-align: center;
+            }
+            section u{
+                font-size: 20px;
+                font-weight: bolder;
+                padding-left: 20px;
+            }
+            section h2{
+                font-size: 20px;
+                padding-left: 40px;
+                font-weight: normal;
+            }
+            section .tt{
+                font-size: 23px;
+                padding-left: 40px;
+                font-weight: normal;
+            }
+            .contact_area button {
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                background: #ffbdbd;
+                color: #333;
+                border: 2px solid #333;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            .contact_area .buttonSub{
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                background: #bdffd4;
+                color: #333;
+                border: 2px solid #333;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            .contact_area button:hover {
+                background: rgb(255, 239, 216);
+                color: #333;
+                border: 2px solid #333;
+            }
+            .up {
+                font-size: 20px;
+                text-align: center;
+                padding-top: 90px;
+            }
+            .posOfCan{
+                margin-left: 410px;
+                margin-top: 20px;
+            }
+            .posOfSub{ 
+                margin-left: 560px;
+                margin-top: -40px;
+            }
+            .file{
+                font-size: 20px;
+                margin-top: 20px;
+                margin-left: 130px;
+                color: blue;
+            }
+            .fade-in1{
+              animation: fadeIn ease 1s;
+            }
+            @keyframes fadeIn {
+              0% {
+                opacity:0;
+              }
+              100% {
+                opacity:1;
+              }
+            }
+            .posBut{
+                margin-left: 1210px;
+            }          
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img src="https://cdn.discordapp.com/attachments/775604868869783582/779751462057017374/THAMMASART_UNIVERSITY.png";>
+                <h1 style="color: gray"><marquee behavior="scroll" direction="left" scrollamount="10">ยินดีต้อนรับเข้าสู่ระบบลงทะเบียนล่าช้า</marquee></h1>
+                <div class="posBut">
+                    <form action="/conbyt">
+                        <button class="button button-wrapper2 buttonAT button4" style="color:white"><span>อนุมัติคำร้องของคณบดี</span></button>
+                    </form>
+                </div>   
+            </header>
+                <div class="fade-in1">
+                    <section>
+                        <h1 style="color:black">อัพโหลดเอกสาร</h1><br>
+                        <u style="color: red">คำเตือน!!</u><br><br>
+                        <h2 style="color:black">กรุณาอัพโหลดเอกสารเพื่อใช้เป็นหลักฐานยืนยันว่านักศึกษาลงทะเบียนล่าช้าด้วยเหตุผลดังกล่าวจริง หลักฐานดังกล่าวอาจจะเป็น 
+                            ใบรับร้องแพทย์,เอกสารที่มีความน่าเชื่อถือโดยเอกสารต้องมีการลงนามของผู้ยืนยัน เป็นต้น  หากพบว่าเอกสารดังกล่าวมีการปลอมแปลง นักศึกษาจะมีความผิดตามกฎหมายมาตราที่ 264 ผู้ใดทำเอกสารปลอมขึ้นทั้งฉบับหรือแต่ส่วนหนึ่งส่วนใด เติมหรือตัดทอนข้อความ 
+                            หรือแก้ไขด้วยประการใดๆ ในเอกสารที่แท้จริง หรือประทับตราปลอม หรือลงลายมือชื่อปลอมในเอกสาร โดยประการที่น่าจะเกิดความเสียหายแก่ผู้อื่นหรือประชาชน 
+                            ถ้าได้กระทำเพื่อให้ผู้หนึ่งผู้ใดหลงเชื่อว่าเป็นเอกสารที่แท้จริง ผู้นั้นกระทำความผิดฐานปลอมเอกสารต้องระวางโทษจำคุกไม่เกินสามปี หรือปรับไม่เกินหกพันบาท หรือทั้งจำทั้งปรับ<br>
+                            นักศึกษาจะต้องอัพโหลดเอกสารที่เป็นไฟล์ PDF เท่านั้น
+                           </h2><br>
+                            <u style="color: red" class="tt">หากนักศึกษาไม่ส่งเอกสารประกอบ คำร้องของนักศึกษาจะไม่ได้รับการอนุมัติ </u>
+                            <div class="up">
+                                <p>กรุณาเลือกไฟล์ที่จะอัพโหลด :</p>
+                                <input type="file" class="file"> 
+                            </div>
+                                <div class="contact_area">
+                                    <form action="/upload/">
+                                            <button class= "button button-wrapper posOfCan">clear</button>
+                                    </form>
+                                    <form >
+                                            <button class= "button buttonSub button-wrapper posOfSub "onclick="myFunction()">submit</button>
+                                    </form>
+                                </div>
+                                       <script>
+                                         function myFunction() {
+                                         alert("อัพโหลดเรียบร้อย");
+                                        }
+                                       </script>
+                    </section>
+                </div>
+                <aside>
+                    <div>
+                        <div>
+                            <form action="/info2">
+                                <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>หน้าแรก</span></button>
+                            </form>
+                            <form action="/request">
+                                <button class="button button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>ลงทะเบียนล่าช้า</span></button>
+                            </form>
+                            <form action="/upload">
+                                <button class="button button1 button-wrapper buttonSelect buttonAT pos1 pos1-1" style="color:white"><span>อัพโหลดเอกสาร</span></button>
+                            </form>
+                            <form action="/show">
+                                <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>แสดงเอกสาร</span></button>
+                            </form>
+                            <form action="/confirm">
+                                <button class="button button-wrapper  pos1 pos1-1" style="color:white"><span>ยืนยันคำร้อง</span></button>
+                            </form>
+                            <form action="/showReq">
+                                <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>แสดงผลยื่นคำร้อง</span></button>
+                            </form>
+                            <form action="/index">
+                                <button class="button button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>ออกจากระบบ</span></button>
+                            </form>
+                        </div>
+                      </div>
+                </aside>
+                    <div class="clearfix"></div>
+                <footer>
+                    
+                </footer>
+        </div>
+    </body>
+</html>

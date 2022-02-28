@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .clearfix{
+                clear: both;
+            }
+            .container{
+                width: 1500px;
+                margin: 0 auto;
+                background: white;
+                overflow: hidden;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			                0 10px 10px rgba(0,0,0,0.22);
+            }
+            header{
+                text-align: center;
+                width: 1500px;
+                background: white;
+                margin: 0 auto;
+                font-size: small;
+            }
+            section{
+                margin-top: 20px;
+                margin-right: 40px;
+                text-align: left;
+                width: 1075px;
+                height: 700px;
+                background: #ffefd8;
+                float: right;
+            }
+            aside{
+                margin-top: 20px;
+                margin-left: 40px;
+                width: 305px;
+                height: 700px;
+                text-align: center;
+                background: rgb(255, 211, 211);
+            }
+            footer{
+                background-image: url("https://cdn.discordapp.com/attachments/775604868869783582/780341743555575858/unknown.png");
+                width: 1500px;
+                height: 80px;
+                margin-top: 20px;
+            }
+            body{
+                background-color: #ffebcd;
+            }
+            .button{
+                background-color: #4a4144; 
+                color:white; 
+            }
+            .button4{
+                background-color: #4a4144; 
+                color:white;
+            }
+            .buttonSelect{
+                background-color: rgb(248, 160, 160);
+                color:white;
+            }
+            .button:hover {
+                background-color: rgb(248, 160, 160);
+                color: white;
+            }
+            .button4:hover {
+                background-color: rgb(157, 247, 162);
+                color: white;
+            }
+            .button-wrapper{
+                width:305px;
+                height:100px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button-wrapper2{
+                width: 250px;
+                height: 50px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button1{padding: 15px 45px }
+            .buttonAT:active {
+                background-color:rgb(248, 160, 160);
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .button:hover span {
+                padding-right: 20px;
+            }
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            .disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+            textarea{
+                width: 600px;
+                height: 150px;
+                box-sizing: border-box;
+                font-size: 16px;
+                resize: none;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+            .posForm{
+               margin-left: 40px;
+            }
+            .posNameSub{
+                margin-left: 8px;
+            }
+            .posSec{
+                margin-left: 5px;
+            }
+            .postable{
+                margin-left: 10px;
+            }
+            table,tr,td,th{
+                border-collapse: collapse;
+                border-bottom: 1px solid gray;
+                text-align: center;
+            }
+            .fade-in1{
+              animation: fadeIn ease 1s;
+            }
+            @keyframes fadeIn {
+              0% {
+                opacity:0;
+              }
+              100% {
+                opacity:1;
+              }
+            }
+            .posBut{
+                margin-left: 1210px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img src="https://cdn.discordapp.com/attachments/775604868869783582/779751462057017374/THAMMASART_UNIVERSITY.png";>
+                <h1 style="color: gray"><marquee behavior="scroll" direction="left" scrollamount="10">ยินดีต้อนรับเข้าสู่ระบบลงทะเบียนล่าช้า</marquee></h1>
+                <div class="posBut">
+                    <form action="/conbyt">
+                        <button class="button button-wrapper2 buttonAT button4" style="color:white"><span>อนุมัติคำร้องของคณบดี</span></button>
+                    </form>
+                </div>   
+            </header>
+                <div class="fade-in1">
+                    <section>
+                        <tr>
+                            <form id="myForm">
+                                <div class="posForm">
+                                    <br><br>
+                                    <label for="ภาคเรียนที่">ภาคเรียนที่</label>
+                                    <select id="term01">
+                                        <option value="เทอมที่1-1">1/2563</option>
+                                        <option value="เทอมที่1-2">2/2563</option>
+                                        <option value="เทอมที่2-1">1/2564</option>
+                                        <option value="เทอมที่2-2">2/2564</option>
+                                    </select><br><br>
+                                    <label for="รหัสวิชา">รหัสวิชา</label>
+                                        <input type="text" id="idsubject" name="idsubject" required><br><br>
+                                    <label for="ชื่อวิชา">ชื่อวิชา</label>
+                                        <input type="text" id="subjectname" name="subjectname" class="posNameSub"required><br><br>
+                                    <label for="sec">Section</label>
+                                        <select id="sec01" class="posSec">
+                                            <option value="650001">650001</option>
+                                            <option value="650002">650002</option>
+                                            <option value="650003">650003</option>
+                                    </select><br><br>
+                                    <label for="เหตุผลที่ยื่น">เหตุผลที่ยื่นคำร้อง</label><br>
+                                        <textarea id="comment01"></textarea><br><br>
+                        </tr>
+                            <button type="button" onclick="register(1)">ลงทะเบียน</button>
+                            <input type="button"; onclick="myFunction1()" value="ResetForm">
+                            <br><br>
+                        </form>
+                        <form id="myForm1">
+                            <script>
+                                let num = 0;
+                                function register(next) {
+                                if(num < 10){
+                                    num += next;
+                                        let table = document.getElementById("table");
+                                        let row = table.insertRow(-1); 
+                                    for (let i = 0; i < 6; i++) {
+                                        cell = row.insertCell(i);
+                                        if (i == 0) {
+                                            tnode = document.createTextNode(num);
+                                        }
+                                        if (i == 1) {
+                                            tnode = document.createTextNode(document.getElementById("term01").value);
+                                        }
+                                        if (i == 2) {
+                                            tnode = document.createTextNode(document.getElementById("idsubject").value);
+                                        }
+                                        if (i == 3) {
+                                            tnode = document.createTextNode(document.getElementById("subjectname").value);
+                                        }
+                                        if (i == 4){
+                                            tnode = document.createTextNode(document.getElementById("sec01").value)
+                                        }
+                                        if (i == 5){
+                                            tnode = document.createTextNode(document.getElementById("comment01").value)
+                                        }
+                                        cell.appendChild(tnode);
+                                    }
+                                } 
+                                }
+                            </script>
+                        </form>
+                        <div class="postable">
+                            <table class="table table-bordered" id="table">
+                                <thead>
+                                  <tr> <!--หัวตาราง-->
+                                    <th scope="col">ลำดับที่ &nbsp;</th>
+                                    <th scope="col">&nbsp; &nbsp; เทอม &nbsp; &nbsp;</th>
+                                    <th scope="col">&nbsp; &nbsp; รหัสวิชา &nbsp; &nbsp;</th>
+                                    <th scope="col">&nbsp; &nbsp; ชื่อวิชา &nbsp; &nbsp;</th>
+                                    <th scope="col">&nbsp; &nbsp; Section &nbsp; &nbsp;</th>
+                                    <th scope="col">&nbsp; &nbsp; เหตุผลที่ยื่นคำร้อง &nbsp; &nbsp;</th>
+                                  </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        
+                        <script>
+                            function myFunction1() {
+                                document.getElementById("myForm").reset();
+                            }
+                        </script>
+                       </div>
+                    </section>
+                </div>
+                <aside>
+                    <div>
+                        <form action="/info2">
+                            <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>หน้าแรก</span></button>
+                        </form>
+                        <form action="/request">
+                            <button class="button button-wrapper buttonSelect buttonAT pos1 pos1-1" style="color:white"><span>ลงทะเบียนล่าช้า</span></button>
+                        </form>
+                        <form action="/upload">
+                            <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>อัพโหลดเอกสาร</span></button>
+                        </form>
+                        <form action="/show">
+                            <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>แสดงเอกสาร</span></button>
+                        </form>
+                        <form action="/confirm">
+                            <button class="button button-wrapper pos1 pos1-1" style="color:white">ยืนยันคำร้อง</button>
+                        </form> 
+                        <form action="/showReq">
+                            <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>แสดงผลยื่นคำร้อง</span></button>
+                        </form>
+                        <form action="/index">
+                            <button class="button button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>ออกจากระบบ</span></button>
+                        </form>
+                    </div>
+                </aside>
+                    <div class="clearfix"></div>
+                <footer>
+                   
+                </footer>
+        </div>
+    </body>
+</html>

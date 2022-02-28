@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .clerfix{
+                clear: both;
+            }
+            .container{
+                width:1700px;
+                margin: 0 auto;
+                margin-top: 50px;
+                background-image: url("https://cdn.discordapp.com/attachments/775604868869783582/780312840124104744/testlog.png");  
+                overflow :hidden;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			                      0 10px 10px rgba(0,0,0,0.22);
+            }
+            section{
+                width: 1700px;
+                height: 900px;
+            }
+            body{
+                background-color: #ffebcd;
+            }
+            .posOfLog{
+              margin-left: 250px;
+            }
+            .button {
+              background-color: #bdffd4;
+              border: none;
+              color: gray;
+              padding: 20px 50px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              transition-duration: 0.4s;
+              border-radius: 12px;
+              transform: translateY(50px);
+              animation: slideUp .8s ease-in-out  forwards 0s;
+            }
+            .button4:hover{
+              box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            input[type=text] {
+              width: 25%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              box-sizing: border-box;
+              border: 3px solid #ccc;
+              -webkit-transition: 0.5s;
+              transition: 0.5s;
+              outline: none;
+              border-radius: 12px;
+              overflow: hidden;
+              transform: translateY(50px);
+              animation: slideUp .8s ease-in-out  forwards 0s;
+            }
+            input[type=text]:focus {
+              border: 3px solid #555;
+            }
+            input[type=password] {
+              width: 25%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              box-sizing: border-box;
+              border: 3px solid #ccc;
+              -webkit-transition: 0.5s;
+              transition: 0.5s;
+              outline: none;
+              border-radius: 12px;
+              overflow: hidden;
+              transform: translateY(50px);
+              animation: slideUp .8s ease-in-out  forwards 0s;  
+            }
+            input[type=password]:focus {
+              border: 3px solid #555;
+            }
+            .fade-in {
+              overflow: hidden;
+              animation: slideUp .3s ease-in-out  forwards 0s;
+            }
+            .fade-in1{
+              animation: fadeIn ease 1s;
+            }
+            .btns {
+              height: 100%;
+              position: relative;
+              width: 150px;
+              overflow: hidden;
+              transform: translateY(300px);
+              animation: slideUp .3s ease-in-out forwards .0s;
+            }
+            @keyframes fadeIn {
+              0% {
+                opacity:0;
+              }
+              100% {
+                opacity:1;
+              }
+            }
+            @keyframes slideUp {
+              0% {
+                transform: translateY(500px);
+              }
+              100% {
+                transform: translateY(0px);
+              }
+            }
+            .posBut{
+                margin-left: 1210px;
+            } 
+        </style>
+        <body>
+          <div class="fade-in1">
+            <div class="container">
+              <header>
+
+              </header>
+              <div class="fade-in">
+                <section>
+                  <div class="login-form">
+                    <div class="posOfLog">
+                      <form action="/api" method="post" novalidate>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <div class="fade-in">
+                          <label><input type="text" placeholder="Username" id="user" name="user" required><br><br>
+                            <input type="password" placeholder="Password" id="pwd" name="pwd" required><br><br></label>
+                        </div>
+                        <div class="btns">
+                          <button type="submit" class="button button4">Login</button>
+                        </div>          
+                    </form>
+                    </div>
+                </section>
+              </div>
+          </div>
+          </div><script>
+                async function postData(url = "", data = {}) {
+                  const response = await fetch(url, {
+                    method: "POST", // *GET, POST, PUT, DELETE, etc.
+                    mode: "cors", // no-cors, *cors, same-origin
+                    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: "same-origin", // include, *same-origin, omit
+                    headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                      // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    redirect: "follow", // manual, *follow, error
+                    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                    body: data, // body data type must match "Content-Type" header
+                  });
+                  return response.json(); // parses JSON response into native JavaScript objects
+                }
+                const form = document.getElementById( "login-form" );
+                form.addEventListener("submit", function(e){
+                  e.preventDefault();
+                  postData('http://localhost:5000/api/home')
+                  .then( data => {
+                    console.log(data);
+                    if (data.status) {
+                      window.location = '/info/' + un;
+                      return true;
+                    } else {
+                      // var se = $('#showerror')
+                      document.getElementById("showerror").style.display = "block";
+                      return false;
+                    }
+                  })
+                  .catch((error) =>{
+                    console.log(error);
+                    return false;
+                  });
+                  return false;
+                });
+            </script>
+        </body>
+    </head>
+</html>

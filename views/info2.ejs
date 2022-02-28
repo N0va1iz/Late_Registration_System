@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .clearfix{
+                clear: both;
+            }
+            .container{
+                width: 1500px;
+                margin: 0 auto;
+                background: white;
+                overflow: hidden;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			                0 10px 10px rgba(0,0,0,0.22);
+            }
+            header{
+                text-align: center;
+                width: 1500px;
+                background: white;
+                margin: 0 auto;
+                font-size: small;
+            }
+            section{
+                margin-top: 20px;
+                margin-right: 40px;
+                text-align: left;
+                width: 1075px;
+                height: 700px;
+                background: #ffefd8;
+                float: right;
+            }
+            aside{
+                margin-top: 20px;
+                margin-left: 40px;
+                width: 305px;
+                height: 700px;
+                text-align: center;
+                background: rgb(255, 211, 211);
+            }
+            footer{
+                background-image: url("https://cdn.discordapp.com/attachments/775604868869783582/780341743555575858/unknown.png");
+                width: 1500px;
+                height: 80px;
+                margin-top: 20px;
+            }
+            body{
+                background-color: #ffebcd;
+            }
+            .button{
+                background-color: #4a4144; 
+                color:white; 
+            }
+            .button4{
+                background-color: #4a4144; 
+                color:white;
+            }
+            .buttonSelect{
+                background-color: rgb(248, 160, 160);
+                color:white;
+            }
+            .button:hover {
+                background-color: rgb(248, 160, 160);
+                color: white;
+            }
+            .button4:hover {
+                background-color: rgb(157, 247, 162);
+                color: white;
+            }
+            .button-wrapper{
+                width:305px;
+                height:100px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button-wrapper2{
+                width: 250px;
+                height: 50px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button1{padding: 15px 45px }
+            .buttonAT:active {
+                background-color:rgb(248, 160, 160);
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .button:hover span {
+                padding-right: 20px;
+            }
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            .disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+            .fontColor{
+                color:gray;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+            .fade-in1{
+              animation: fadeIn ease 1s;
+            }
+            @keyframes fadeIn {
+              0% {
+                opacity:0;
+              }
+              100% {
+                opacity:1;
+              }
+            }
+            .posBut{
+                margin-left: 1210px;
+            } 
+        </style>
+    </head>
+    <body>     
+          <div class="container">
+              <header>
+                <img src="https://cdn.discordapp.com/attachments/775604868869783582/779751462057017374/THAMMASART_UNIVERSITY.png";>
+                <h1 style="color: gray"><marquee behavior="scroll" direction="left" scrollamount="10">ยินดีต้อนรับเข้าสู่ระบบลงทะเบียนล่าช้า</marquee></h1>
+                <div class="posBut">
+                    <form action="/conbyt">
+                        <button class="button button-wrapper2 buttonAT button4" style="color:white"><span>อนุมัติคำร้องของคณบดี</span></button>
+                    </form>
+                </div>   
+              </header>
+                <div class="fade-in1">
+                    <section>
+                        <div class="fontColor">
+                            <h2> <%=id%> </h2>
+                            <h2> <%=name_th%> </h2>
+                            <h2> <%=email%> </h2>
+                            <h2> <%=faculty%> </h2>
+                            <h2> <%=department%> </h2>
+                            
+                        </div>
+                    </section>
+                </div>
+                    <aside>
+                        <div>
+                            <form action="/info2">
+                                <button class="button button1 button-wrapper buttonSelect buttonAT pos1 pos1-1" style="color:white"><span>หน้าแรก</span></button>
+                            </form>
+                            <form action="/request">
+                                <button class="button button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>ลงทะเบียนล่าช้า</span></button>
+                            </form>
+                            <form action="/upload">
+                                <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>อัพโหลดเอกสาร</span></button>
+                            </form>
+                            <form action="/show">
+                                <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>แสดงเอกสาร</span></button>
+                            </form>
+                            <form action="/confirm">
+                                <button class="button button-wrapper pos1 pos1-1" style="color:white"><span>ยืนยันคำร้อง</span></button>
+                            </form>
+                            <form action="/showReq">
+                              <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>แสดงผลยื่นคำร้อง</span></button>
+                            </form>
+                            <form action="/index">
+                                <button class="button button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>ออกจากระบบ</span></button>
+                            </form>
+                        </div>
+                    </aside>
+                        <div class="clearfix"></div>
+                    <footer>
+                        
+                    </footer>
+            </div>
+    </body>
+</html>

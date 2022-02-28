@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .clearfix{
+                clear: both;
+            }
+            .container{
+                width: 1500px;
+                margin: 0 auto;
+                background: white;
+                overflow: hidden;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			                0 10px 10px rgba(0,0,0,0.22);
+            }
+            header{
+                text-align: center;
+                width: 1500px;
+                background: white;
+                margin: 0 auto;
+                font-size: small;
+            }
+            section{
+                margin-top: 20px;
+                margin-right: 40px;
+                text-align: left;
+                width: 1075px;
+                height: 700px;
+                background: #ffefd8;
+                float: right;
+            }
+            aside{
+                margin-top: 20px;
+                margin-left: 40px;
+                width: 305px;
+                height: 700px;
+                text-align: center;
+                background: rgb(255, 211, 211);
+            }
+            footer{
+                background-image: url("https://cdn.discordapp.com/attachments/775604868869783582/780341743555575858/unknown.png");
+                width: 1500px;
+                height: 80px;
+                margin-top: 20px;
+            }
+            body{
+                background-color: #ffebcd;
+            }
+            .button{
+                background-color: #4a4144; 
+                color:white; 
+            }
+            .button4{
+                background-color: #4a4144; 
+                color:white;
+            }
+            .buttonSelect{
+                background-color: rgb(248, 160, 160);
+                color:white;
+            }
+            .button:hover {
+                background-color: rgb(248, 160, 160);
+                color: white;
+            }
+            .button4:hover {
+                background-color: rgb(157, 247, 162);
+                color: white;
+            }
+            .button-wrapper{
+                width:305px;
+                height:100px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button-wrapper2{
+                width: 250px;
+                height: 50px;
+                font-size:large;
+                display:block;
+                text-align:center;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+                color: white;
+            }
+            .button1{padding: 15px 45px }
+            .buttonAT:active {
+                background-color:rgb(248, 160, 160);
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .button:hover span {
+                padding-right: 20px;
+            }
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            .disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+            .text1{
+                display: flex;
+                font-size: 30px;
+                padding-top: 20px;
+                padding-left: 450px  ;
+                font-family: 'Sarabun', sans-serif;
+            }
+            .btn{
+                border: none;
+                position: center;
+                margin: 1px;
+                width: 350px;
+                height: 85px;
+                font-size: 20px;
+                color: #fff;
+                cursor: pointer;
+                transition-duration: 0.4s;
+                font-family: 'Sarabun', sans-serif;
+            }
+            .btn:hover {
+                background-color:#987b7d; 
+                color: white;
+            }
+            .b1{
+            background-color: #4d4344;
+            }
+            .but{
+                border: none;
+                position: center;
+                margin: 1px;
+                width: 350px;
+                height: 85px;
+                font-size: 20px;
+                color: #fff;
+            background-color: #f8a09f;
+            font-family: 'Sarabun', sans-serif;
+            }
+            .menu{
+                display: flex;
+                flex: 1;
+                margin-top: 250px;
+            }
+            .menu > ul{
+                flex-direction: column;
+                list-style: none;
+            }
+            .butt{
+                border: none;
+                position: center;
+                margin-top: 200px;
+                margin-left: 450px ;
+                width: 200px;
+                height: 85px;
+                font-size: 20px;
+                color: #fff;
+                background-color:#333745;
+                cursor: pointer;
+                transition-duration: 0.4s;
+                font-family: 'Sarabun', sans-serif;
+            }
+            .modal {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                transition: 200ms ease-in-out;
+                border: 1px solid black;
+                border-radius: 10px;
+                z-index: 10;
+                background-color: white;
+                width: 500px;
+                max-width: 80%;
+            }
+            .modal.active {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            .modal-header {
+                padding: 10px 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid black;
+            }
+            .modal-header .title {
+                font-size: 1.25rem;
+                font-weight: bold;
+                font-family: 'Sarabun', sans-serif;
+            }
+            .modal-header .close-button {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                background: none;
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+            .modal-body {
+                background-color: white;
+                line-height: normal;
+                padding: 10px 70px;
+                font-family: 'Sarabun', sans-serif;
+            }
+            #overlay {
+                position: fixed;
+                opacity: 0;
+                transition: 200ms ease-in-out;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, .5);
+                pointer-events: none;
+            }
+            #overlay.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+            .posBut{
+                margin-left: 1210px;
+            } 
+        </style>
+        <meta name= "viewport" content="width = device-width , initial scale = 1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <link rel="stylesheet" href="Style.css"  type="text/css" charset="utf-8" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400&display=swap" rel="stylesheet">   
+        <script defer src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img src="https://cdn.discordapp.com/attachments/775604868869783582/779751462057017374/THAMMASART_UNIVERSITY.png";>
+                <h1 style="color: gray"><marquee behavior="scroll" direction="left" scrollamount="10">ยินดีต้อนรับเข้าสู่ระบบลงทะเบียนล่าช้า</marquee></h1>
+                <div class="posBut">
+                    <form action="/conbyt">
+                        <button class="button button-wrapper2 buttonAT button4" style="color:white"><span>อนุมัติคำร้องของคณบดี</span></button>
+                    </form>
+                </div>   
+            </header>
+            <div class="fade-in1">
+                <section>
+                    <div class="text1">
+                        <p>ผลการยื่นคำร้อง</p>
+                    </div>
+                    <button class="butt" data-modal-target="#modal">แสดงผลการยื่นคำร้อง</button>
+                    <div class="modal" id="modal">
+                             <div class="modal-header">
+                             <div class="title">ผลการยื่นคำร้องขอลงทะเบียนล่าช้า</div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                 <div class="modal-body">
+                     <p>ผลการยื่นคำร้องขอลงทะเบียนล่าช้า</p>
+                     <h2>ได้รับการอนุมัติ</h2>
+                </div>
+                <div id="overlay"></div>
+                </section>
+                <script>
+                    const openModalButtons = document.querySelectorAll('[data-modal-target]')
+                    const closeModalButtons = document.querySelectorAll('[data-close-button]')
+                    const overlay = document.getElementById('overlay')
+
+                    openModalButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const modal = document.querySelector(button.dataset.modalTarget)
+                        openModal(modal)
+                    })
+                    })
+
+                    overlay.addEventListener('click', () => {
+                    const modals = document.querySelectorAll('.modal.active')
+                    modals.forEach(modal => {
+                        closeModal(modal)
+                    })
+                    })
+
+                    closeModalButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const modal = button.closest('.modal')
+                        closeModal(modal)
+                    })
+                    })
+
+                    function openModal(modal) {
+                    if (modal == null) return
+                    modal.classList.add('active')
+                    overlay.classList.add('active')
+                    }
+
+                    function closeModal(modal) {
+                    if (modal == null) return
+                    modal.classList.remove('active')
+                    overlay.classList.remove('active')
+                    }
+                </script>
+            </div>
+                <aside>
+                    <div>
+                        <form action="/info2">
+                            <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>หน้าแรก</span></button>
+                        </form>
+                        <form action="/request">
+                            <button class="button button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>ลงทะเบียนล่าช้า</span></button>
+                        </form>
+                        <form action="/upload">
+                            <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>อัพโหลดเอกสาร</span></button>
+                        </form>
+                        <form action="/show">
+                            <button class="button button1 button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>แสดงเอกสาร</span></button>
+                        </form>
+                        <form action="/confirm">
+                            <button class="button button-wrapper pos1 pos1-1" style="color:white"><span>ยืนยันคำร้อง</span></button>
+                        </form>
+                        <form action="/showReq">
+                            <button class="button button1 button-wrapper buttonAT buttonSelect pos1 pos1-1" style="color:white"><span>แสดงผลยื่นคำร้อง</span></button>
+                        </form>
+                        <form action="/index">
+                            <button class="button button-wrapper buttonAT pos1 pos1-1" style="color:white"><span>ออกจากระบบ</span></button>
+                        </form>
+                    </div>
+                </aside>
+                    <div class="clearfix"></div>
+                <footer>
+                    
+                </footer>
+        </div>
+</body>
+</html>
